@@ -1,6 +1,28 @@
-package com.example.demo;
+package com.example.demo.Category;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
+
+@Entity
+@Table
 public class Category {
+
+    @Id
+	@SequenceGenerator(
+		name = "category",
+		sequenceName = "category",
+		allocationSize = 1
+	)
+	@GeneratedValue(
+		strategy = GenerationType.SEQUENCE,
+		generator = "category"
+	)
+
+
     private long storeId;
     private String name;
 
